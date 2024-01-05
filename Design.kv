@@ -21,184 +21,78 @@ MDBottomNavigation:
 				spacing: 25
 				orientation: "vertical"
 				
-				MDScrollView:
-					do_scroll_y: True
+				MDSwiper:
+					size_hint_y: .7
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Toy-Story.jpg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Frozen.jpg"
 						
-					MDGridLayout:
-						cols: 2
-						row_default_height: (self.width - self.cols * self.spacing[0]) / self.cols
-						row_force_default: True
-						adaptive_height: True
-						padding: dp(10), dp(10)
-						spacing: dp(10)
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Toy-Story.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Toy Story"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Frozen.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Frozen"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Elemental.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Elemental"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Wreck-It-Ralph.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Wreck It Ralph"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Toy-Story-2.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Toy Story 2"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Monsters.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Monsters Inc."
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Ralph-Breaks-The-Internet.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Ralph Breaks The Internet"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Toy-Story-3.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Toy Story 3"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Zootopia.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Zootopia"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Toy-Story-4.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Toy Story 4"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Monsters-University.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Monsters University"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Frozen-2.jpg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Frozen II"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Encanto.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Encanto"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
-						
-						MDSmartTile:
-						    radius: 24
-						    box_radius: [0, 0, 24, 24]
-						    box_color: 1, 1, 1, .2
-						    source: "assets/images/Moana.jpeg"
-						    size_hint: .2, .2
-						    
-						    MDLabel:
-						        text: "Moana"
-						        bold: True
-						        color: 241 / 255, 6 / 255, 11 / 255, 1
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Elemental.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Wreck-It-Ralph.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Toy-Story-2.jpg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Monsters.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Ralph-Breaks-The-Internet.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Toy-Story-3.jpg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Zootopia.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Toy-Story-4.jpg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Monsters-University.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Frozen-2.jpg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Encanto.jpeg"
+					
+					MDSwiperItem:
+						FitImage:
+							radius: [20,]
+							source: "assets/images/Moana.jpeg"
 	
 	MDBottomNavigationItem:
 		name : "Predictor"
