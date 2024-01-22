@@ -18,12 +18,16 @@ data = [
 	["assets/images/Monsters.jpeg", "https://youtube.com/embed/6tCxnHCqqxg"], 
 	["assets/images/Ralph-Breaks-The-Internet.jpeg", "https://youtube.com/embed/_BcYBFC6zfY"], 
 	["assets/images/Toy-Story-3.jpg", "https://youtube.com/embed/JcpWXaA2qeg"], 
+	["assets/images/Inside-Out.jpeg", "https://youtube.com/embed/1HFv47QHWJU"], 
 	["assets/images/Zootopia.jpeg", "https://youtube.com/embed/jWM0ct-OLsM"], 
+	["assets/images/Finding-Dory.jpeg", "https://youtube.com/embed/JhvrQeY3doI"], 
 	["assets/images/Toy-Story-4.jpg", "https://youtube.com/embed/wmiIUN-7qhE"], 
 	["assets/images/Monsters-University.jpeg", "https://youtube.com/embed/xBzPioph8CI"], 
 	["assets/images/Frozen-2.jpg", "https://youtube.com/embed/Zi4LMpSDccc"], 
 	["assets/images/Encanto.jpeg", "https://youtube.com/embed/CaimKeDcudo"], 
-	["assets/images/Moana.jpeg", "https://youtube.com/embed/LKFuXETZUsI"]
+	["assets/images/Coco.jpeg", "https://youtube.com/embed/Rvr68u6k5sI"], 
+	["assets/images/Moana.jpeg", "https://youtube.com/embed/LKFuXETZUsI"], 
+	["assets/images/Finding-Nemo.jpeg", "https://youtube.com/embed/2zLkasScy7A"]
 ]
 
 class DisneyApp(MDApp):
