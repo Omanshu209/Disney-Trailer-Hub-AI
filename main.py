@@ -10,20 +10,20 @@ from Deep_Learning.DisneyCharacterClassifier import DisneyCharacterClassifier
 classifier = DisneyCharacterClassifier(model_path = "Deep_Learning/Model/DisneyCharactersClassifier_CNN_Model.pt")
 
 data = [
-	["assets/images/Toy-Story.jpg", "https://youtu.be/tN1A2mVnrOM"], 
-	["assets/images/Frozen.jpg", "https://youtu.be/TbQm5doF_Uc"], 
-	["assets/images/Elemental.jpeg", "https://youtu.be/hXzcyx9V0xw"], 
-	["assets/images/Wreck-It-Ralph.jpeg", "https://youtu.be/87E6N7ToCxs"], 
-	["assets/images/Toy-Story-2.jpg", "https://youtu.be/xNWSGRD5CzU"], 
-	["assets/images/Monsters.jpeg", "https://youtu.be/6tCxnHCqqxg"], 
-	["assets/images/Ralph-Breaks-The-Internet.jpeg", "https://youtu.be/_BcYBFC6zfY"], 
-	["assets/images/Toy-Story-3.jpg", "https://youtu.be/JcpWXaA2qeg"], 
-	["assets/images/Zootopia.jpeg", "https://youtu.be/jWM0ct-OLsM"], 
-	["assets/images/Toy-Story-4.jpg", "https://youtu.be/wmiIUN-7qhE"], 
-	["assets/images/Monsters-University.jpeg", "https://youtu.be/xBzPioph8CI"], 
-	["assets/images/Frozen-2.jpg", "https://youtu.be/Zi4LMpSDccc"], 
-	["assets/images/Encanto.jpeg", "https://youtu.be/CaimKeDcudo"], 
-	["assets/images/Moana.jpeg", "https://youtu.be/LKFuXETZUsI"]
+	["assets/images/Toy-Story.jpg", "https://youtube.com/embed/tN1A2mVnrOM"], 
+	["assets/images/Frozen.jpg", "https://youtube.com/embed/TbQm5doF_Uc"], 
+	["assets/images/Elemental.jpeg", "https://youtube.com/embed/hXzcyx9V0xw"], 
+	["assets/images/Wreck-It-Ralph.jpeg", "https://youtube.com/embed/87E6N7ToCxs"], 
+	["assets/images/Toy-Story-2.jpg", "https://youtube.com/embed/xNWSGRD5CzU"], 
+	["assets/images/Monsters.jpeg", "https://youtube.com/embed/6tCxnHCqqxg"], 
+	["assets/images/Ralph-Breaks-The-Internet.jpeg", "https://youtube.com/embed/_BcYBFC6zfY"], 
+	["assets/images/Toy-Story-3.jpg", "https://youtube.com/embed/JcpWXaA2qeg"], 
+	["assets/images/Zootopia.jpeg", "https://youtube.com/embed/jWM0ct-OLsM"], 
+	["assets/images/Toy-Story-4.jpg", "https://youtube.com/embed/wmiIUN-7qhE"], 
+	["assets/images/Monsters-University.jpeg", "https://youtube.com/embed/xBzPioph8CI"], 
+	["assets/images/Frozen-2.jpg", "https://youtube.com/embed/Zi4LMpSDccc"], 
+	["assets/images/Encanto.jpeg", "https://youtube.com/embed/CaimKeDcudo"], 
+	["assets/images/Moana.jpeg", "https://youtube.com/embed/LKFuXETZUsI"]
 ]
 
 class DisneyApp(MDApp):
