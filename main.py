@@ -68,7 +68,7 @@ class DisneyApp(MDApp):
 						theme_icon_color = "Custom", 
 						icon_color = "#311021", 
 						type = "standard", 
-						on_release = lambda x, parameter = movie_name: self.update_info_screen(parameter) 
+						on_release = lambda x, parameter = movie_name: self.update_info_screen(parameter)
 					)
 				)
 			)
