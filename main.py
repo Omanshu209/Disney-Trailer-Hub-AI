@@ -68,6 +68,7 @@ class DisneyApp(MDApp):
 	
 	def update_info_screen(self, movie_name):
 		self.root.ids.info_box.text = movie_description[movie_name]
+		self.root.ids.info_box.hint_text = movie_name.replace('-', ' ')
 		for _, (image_path, trailer_link) in enumerate(data):
 			if movie_name == (image_path.split('/')[2]).split('.')[0]:
 				self.root.ids.movie_image.source = image_path
