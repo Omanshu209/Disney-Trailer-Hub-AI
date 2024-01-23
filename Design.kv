@@ -3,7 +3,7 @@ MDBottomNavigation:
 
 	MDBottomNavigationItem:
 		name: "DisneyMovieList"
-		text: "Trailers"
+		text: "Movies"
         icon: "movie"
 		
 		MDScreen:
@@ -27,7 +27,7 @@ MDBottomNavigation:
 	
 	MDBottomNavigationItem:
 		name: "MovieInfo"
-		text: "Information"
+		text: "Info & Trailer"
         icon: "movie-filter"
 		
 		MDScreen:
@@ -45,6 +45,7 @@ MDBottomNavigation:
 					multiline: True
 					pos_hint: {"center_x" : .2, "center_y" : .25}
 					size_hint: .3, .4
+					line_color_normal: 0, 0, 1, 1
 				
 				MDFloatingActionButton:
 					id: trailer_button
