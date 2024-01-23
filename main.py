@@ -3,9 +3,14 @@ from kivy.lang import Builder
 from kivymd.uix.swiper.swiper import MDSwiperItem
 from kivymd.uix.fitimage.fitimage import FitImage
 from kivymd.uix.button.button import MDFloatingActionButton
+
+from json import load
 from webview import WebView
 from PIL import Image
 from Deep_Learning.DisneyCharacterClassifier import DisneyCharacterClassifier
+
+with open("assets/description.json", 'r') as file:
+	movie_description = load(file)
 
 classifier = DisneyCharacterClassifier(model_path = "Deep_Learning/Model/DisneyCharactersClassifier_CNN_Model.pt")
 
@@ -35,10 +40,13 @@ class DisneyApp(MDApp):
 	def build(self):
 		self.theme_cls.theme_style = "Dark"
 		self.theme_cls.primary_palette = "Blue"
+		self.theme_cls.material_style = "M3"
 		return Builder.load_file("Design.kv")
 	
 	def on_start(self):
 		for _, (image_path, trailer_link) in enumerate(data):
+			movie_name = (image_path.split('/')[2]).split('.')[0]
+			
 			self.root.ids.swiper.add_widget(
 				MDSwiperItem(
 				
@@ -48,13 +56,22 @@ class DisneyApp(MDApp):
 					), 
 					
 					MDFloatingActionButton(
-						icon = "movie-filter", 
-						md_bg_color = "blue", 
+						icon = "information", 
+						md_bg_color = "#f8d7e3", 
+						theme_icon_color = "Custom", 
+						icon_color = "#311021", 
 						type = "standard", 
-						on_release = lambda x, parameter = trailer_link: WebView(parameter)
+						on_release = lambda x, parameter = movie_name: self.update_info_screen(parameter)
 					)
 				)
 			)
+	
+	def update_info_screen(self, movie_name):
+		self.root.ids.info_box.text = movie_description[movie_name]
+		for _, (image_path, trailer_link) in enumerate(data):
+			if movie_name == (image_path.split('/')[2]).split('.')[0]:
+				self.root.ids.movie_image.source = image_path
+				self.root.ids.trailer_button.on_release = lambda parameter = trailer_link: WebView(parameter)
 	
 	def capture_and_predict(self):
 		self.root.ids.camera.export_to_png("assets/clicked_image.png")

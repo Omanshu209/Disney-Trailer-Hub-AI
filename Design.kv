@@ -26,6 +26,36 @@ MDBottomNavigation:
 					size_hint_y: .7
 	
 	MDBottomNavigationItem:
+		name: "MovieInfo"
+		text: "Information"
+        icon: "movie-filter"
+		
+		MDScreen:
+			
+			MDFloatLayout:
+				
+				FitImage:
+					id: movie_image
+					size_hint: 1, 1
+				
+				MDTextField:
+					id: info_box
+					readonly: True
+					mode: "rectangle"
+					multiline: True
+					pos_hint: {"center_x" : .2, "center_y" : .25}
+					size_hint: .3, .4
+				
+				MDFloatingActionButton:
+					id: trailer_button
+					icon: "movie-filter"
+					pos_hint: {"center_x" : .9, "center_y" : .15}
+					type: "large"
+					md_bg_color: "#f8d7e3"
+					theme_icon_color: "Custom"
+					icon_color: "#311021"
+	
+	MDBottomNavigationItem:
 		name : "Predictor"
 		text : "AI"
 		icon : "brain"
