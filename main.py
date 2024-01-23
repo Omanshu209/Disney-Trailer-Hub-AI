@@ -4,8 +4,15 @@ from kivymd.uix.swiper.swiper import MDSwiperItem
 from kivymd.uix.fitimage.fitimage import FitImage
 from kivymd.uix.button.button import MDFloatingActionButton
 
+try:
+	from webview import WebView
+	webview_is_available = True
+	
+except ModuleNotFoundError:
+	import webbrowser as wb
+	webview_is_available = False
+
 from json import load
-from webview import WebView
 from PIL import Image
 from Deep_Learning.DisneyCharacterClassifier import DisneyCharacterClassifier
 
@@ -61,7 +68,7 @@ class DisneyApp(MDApp):
 						theme_icon_color = "Custom", 
 						icon_color = "#311021", 
 						type = "standard", 
-						on_release = lambda x, parameter = movie_name: self.update_info_screen(parameter)
+						on_release = lambda x, parameter = movie_name: self.update_info_screen(parameter) 
 					)
 				)
 			)
@@ -69,10 +76,17 @@ class DisneyApp(MDApp):
 	def update_info_screen(self, movie_name):
 		self.root.ids.info_box.text = movie_description[movie_name]
 		self.root.ids.info_box.hint_text = movie_name.replace('-', ' ')
+		
 		for _, (image_path, trailer_link) in enumerate(data):
+			
 			if movie_name == (image_path.split('/')[2]).split('.')[0]:
 				self.root.ids.movie_image.source = image_path
-				self.root.ids.trailer_button.on_release = lambda parameter = trailer_link: WebView(parameter)
+				
+				if webview_is_available:
+					self.root.ids.trailer_button.on_release = lambda parameter = trailer_link: WebView(parameter)
+				
+				else:
+					self.root.ids.trailer_button.on_release = lambda parameter = trailer_link: wb.open(parameter)
 	
 	def capture_and_predict(self):
 		self.root.ids.camera.export_to_png("assets/clicked_image.png")
