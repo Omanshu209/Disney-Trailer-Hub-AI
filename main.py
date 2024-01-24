@@ -74,6 +74,7 @@ class DisneyApp(MDApp):
 			)
 	
 	def update_info_screen(self, movie_name):
+		self.root.ids.title_image.source = f"assets/title-images/{movie_name}.webp"
 		self.root.ids.info_box.text = movie_description[movie_name]
 		self.root.ids.info_box.hint_text = movie_name.replace('-', ' ')
 		
