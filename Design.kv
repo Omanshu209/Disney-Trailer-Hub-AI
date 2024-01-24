@@ -43,16 +43,27 @@ MDBottomNavigation:
 					pos_hint: {"center_x": .2, "center_y": .6}
 					size_hint: .4, .2
 				
-				MDTextField:
-					id: info_box
-					readonly: True
-					mode: "rectangle"
-					multiline: True
-					pos_hint: {"center_x" : .2, "center_y" : .25}
+				MDCard:
 					size_hint: .3, .4
-					hint_text_color_normal: "red"
-					line_color_normal: "cyan"
-					text_color_normal: "white"
+					pos_hint: {"center_x": .2, "center_y": .25}
+					elevation: 7
+					padding: 25
+					spacing: 25
+					orientation: "vertical"
+					
+					MDScrollView:
+						do_scroll_x: False
+						do_scroll_y: True
+						
+						MDLabel:
+							id: info_box
+							size_hint_y: None
+							height: self.texture_size[1]
+							text_size: self.width, None
+							padding: 10, 10
+							bold: True 
+							color: 0, .5, 1, 1
+							halign: "center"
 				
 				MDFloatingActionButton:
 					id: trailer_button
