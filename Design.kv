@@ -80,51 +80,54 @@ MDBottomNavigation:
 		
 		MDScreen:
 			
-			MDFloatLayout:
+			MDBoxLayout:
+			    orientation : "vertical"
+			    padding : 10
+			    spacing : 10
 		        
 		        AsyncImage:
 					pos_hint: {"center_x": .5, "center_y": .9}
 					size_hint_y: .1
 					source: "assets/images/Disney_Logo.png"
 		        
-		        Camera:
-		            id: camera
-		            pos_hint: {"center_x": .32, "center_y": .5}
-		            resolution: (640,480)
-		            size_hint_y: 0.6
-		            play: True
+		        MDGridLayout:
+		        	cols: 2
+			        
+			        Camera:
+			            id: camera
+			            resolution: (640,480)
+			            size_hint: .4, .7
+			            play: True
+			        
+			        MDCard:
+						size_hint: .3, .4
+						elevation: 7
+						padding: 25
+						spacing: 25
+						orientation: "vertical"
+						
+						MDScrollView:
+							do_scroll_x: False
+							do_scroll_y: True
+							
+							MDLabel:
+								id: prediction_card
+								size_hint_y: None
+								height: self.texture_size[1]
+								text_size: self.width, None
+								padding: 10, 10
+								bold: True 
+								color: 0, .5, 1, 1
+								halign: "center"
 		        
 		        MDRoundFlatButton:
 		            text: "Predict"
-		            pos_hint: {"center_x" : 0.3, "center_y": .15}
-		            size_hint_y: .08
+		            pos_hint: {"center_x" : 0.5}
 		            on_release: app.capture_and_predict()
 		        
 		        MDRectangleFlatButton:
 		        	id: prediction
 					text: "Prediction" 
-					pos_hint: {"center_x": .8, "center_y": .15}
-					size_hint: 0.3, .06
+					pos_hint: {'center_x':.5}
+					size_hint: 0.6,.15
 					bold: True
-				
-				MDCard:
-					size_hint: .2, .5
-					pos_hint: {"center_x" : .85, "center_y" : .5}
-					elevation: 7
-					padding: 25
-					spacing: 25
-					orientation: "vertical"
-					
-					MDScrollView:
-						do_scroll_x: False
-						do_scroll_y: True
-						
-						MDLabel:
-							id: prediction_card
-							size_hint_y: None
-							height: self.texture_size[1]
-							text_size: self.width, None
-							padding: 10, 10
-							bold: True 
-							color: 0, .5, 1, 1
-							halign: "center"
