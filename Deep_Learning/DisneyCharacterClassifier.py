@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torchvision import transforms, models
 
 labels : dict = {
@@ -33,6 +34,7 @@ class DisneyCharacterClassifier:
 		
 		self.device = "cuda" if torch.cuda.is_available() else "cpu"
 		self.Model = self.load_model(model_path)
+		self.Model.eval()
 	
 	def load_model(self, model_path):
 		Model = models.resnet18(pretrained = True)
@@ -56,9 +58,13 @@ class DisneyCharacterClassifier:
 		return transformed_image
 	
 	def predict(self, transformed_image):
-		self.Model.eval()
 		with torch.no_grad():
 			y_pred = self.Model(transformed_image.unsqueeze(0).to(self.device))
+			
+			probabilities = F.softmax(y_pred, dim = 1).squeeze().detach().numpy()
+			percent_probabilities = {class_label: round(prob.item() * 100) for class_label, prob in zip(labels.keys(), probabilities)}
+			
 			y_pred_tensor = torch.max(y_pred, 1)[1]
 			y_pred_string = [i for i in labels if labels[i] == y_pred_tensor][0]
-		return y_pred_string
+		
+		return (y_pred_string, percent_probabilities)
