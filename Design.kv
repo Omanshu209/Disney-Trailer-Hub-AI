@@ -81,10 +81,7 @@ MDBottomNavigation:
 		
 		MDScreen:
 			
-			MDBoxLayout:
-			    orientation : "vertical"
-			    padding : 10
-			    spacing : 10
+			MDFloatLayout:
 		        
 		        AsyncImage:
 					pos_hint: {"center_x": .5, "center_y": .9}
@@ -93,18 +90,42 @@ MDBottomNavigation:
 		        
 		        Camera:
 		            id: camera
+		            pos_hint: {"center_x": .3, "center_y": .5}
 		            resolution: (640,480)
-		            size_hint_y: 0.7
+		            size_hint_y: 0.6
 		            play: True
 		        
 		        MDRoundFlatButton:
 		            text: "Predict"
-		            pos_hint: {"center_x" : 0.5}
+		            pos_hint: {"center_x" : 0.3, "center_y": .13}
+		            size_hint_y: .08
 		            on_release: app.capture_and_predict()
 		        
 		        MDRectangleFlatButton:
 		        	id: prediction
 					text: "Prediction" 
-					pos_hint: {"center_x": .5}
-					size_hint: 0.6, .15
+					pos_hint: {"center_x": .8, "center_y": .15}
+					size_hint: 0.3, .06
 					bold: True
+				
+				MDCard:
+					size_hint: .2, .5
+					pos_hint: {"center_x" : .8, "center_y" : .5}
+					elevation: 7
+					padding: 25
+					spacing: 25
+					orientation: "vertical"
+					
+					MDScrollView:
+						do_scroll_x: False
+						do_scroll_y: True
+						
+						MDLabel:
+							id: prediction_card
+							size_hint_y: None
+							height: self.texture_size[1]
+							text_size: self.width, None
+							padding: 10, 10
+							bold: True 
+							color: 0, .5, 1, 1
+							halign: "center"
