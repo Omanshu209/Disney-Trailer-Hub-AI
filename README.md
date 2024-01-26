@@ -31,7 +31,7 @@ The Disney Trailer App is a cross-platform application developed using the KivyM
   - Predict the Disney character in the captured image using a `pre-trained deep learning model`.
   - Display the prediction result in a visually appealing format.
 
-<img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/fe31925a-518b-463c-8624-b63c76bdd126" align = "left" width = "500">
+<img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/d866888a-0e87-434c-9419-6e47239cbb10" align = "left" width = "500">
 </img>
 
 <img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/81a03156-e246-4b0a-b1f8-38b35eadb32e" align = "right" width = "500">
