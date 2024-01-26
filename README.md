@@ -20,7 +20,7 @@ The Disney Trailer App is a cross-platform application developed using the KivyM
   - View detailed information about a selected Disney movie, including an image, title, and description.
   - Play the `movie trailer` by clicking on a dedicated button. The choice between webview and webbrowser modules depends on availability.
 
-<img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/41560643-4cc8-4c74-95d2-b659fd3fab3e" align = "left" width = "500">
+<img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/b69bd42f-60a9-477a-a0ff-caa77c620563" align = "left" width = "500">
 </img>
 
 <img src = "https://github.com/Omanshu209/Disney-Trailer-Hub-AI/assets/114089324/edb0e353-5313-48ae-a9b3-047337afc1d6" align = "right" width = "500">
