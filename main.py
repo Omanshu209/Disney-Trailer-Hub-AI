@@ -14,12 +14,16 @@ except ModuleNotFoundError:
 
 from json import load
 from PIL import Image
+
 from Deep_Learning.DisneyCharacterClassifier import DisneyCharacterClassifier
+from Deep_Learning.DisneyMovieClassifier import DisneyMovieClassifier
 
 with open("assets/description.json", 'r') as file:
 	movie_description = load(file)
 
-classifier = DisneyCharacterClassifier(model_path = "Deep_Learning/Model/DisneyCharactersClassifier_CNN_Model.pt")
+character_classifier = DisneyCharacterClassifier(model_path = "Deep_Learning/Model/DisneyCharactersClassifier_CNN_Model.pt")
+
+movie_classifier = DisneyMovieClassifier(model_path = "Deep_Learning/Model/DisneyMovieClassifier_CNN_Model.pt")
 
 data = [
 	["assets/images/Toy-Story.jpg", "https://youtube.com/embed/tN1A2mVnrOM"], 
@@ -47,6 +51,10 @@ data = [
 ]
 
 class DisneyApp(MDApp):
+	
+	def __init__(self):
+		super().__init__()
+		self.classifier = character_classifier
 	
 	def build(self):
 		self.theme_cls.theme_style = "Dark"
@@ -93,16 +101,22 @@ class DisneyApp(MDApp):
 				else:
 					self.root.ids.trailer_button.on_release = lambda parameter = trailer_link: wb.open(parameter)
 	
+	def switch_classifier(self, segmented_control, segmented_item):
+		if segmented_item.text == "Character":
+			self.classifier = character_classifier
+		else:
+			self.classifier = movie_classifier
+	
 	def capture_and_predict(self):
 		self.root.ids.camera.export_to_png("assets/clicked_image.png")
-		image = classifier.transform_image(Image.open("assets/clicked_image.png"))
-		prediction, probability = classifier.predict(image)
+		image = self.classifier.transform_image(Image.open("assets/clicked_image.png"))
+		prediction, probability = self.classifier.predict(image)
 		self.root.ids.prediction.text = prediction
 		
 		sorted_prob = sorted(probability.items(), key = lambda item: item[1])
 		prob_text = ""
-		for _, (character, percentage) in enumerate(sorted_prob):
-			prob_text += f"{character} : {percentage}%\n"
+		for _, (item, percentage) in enumerate(sorted_prob):
+			prob_text += f"{item} : {percentage}%\n"
 		self.root.ids.prediction_card.text = prob_text
 
 DisneyApp().run()

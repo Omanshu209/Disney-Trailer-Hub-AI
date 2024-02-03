@@ -89,6 +89,22 @@ MDBottomNavigation:
 					pos_hint: {"center_x": .5, "center_y": .9}
 					size_hint_y: .1
 					source: "assets/images/Disney_Logo.png"
+				
+				MDSegmentedControl:
+					pos_hint: {"center_x": .5}
+					md_bg_color: 0, 107 / 255, 153 / 255, 1
+					segment_color: app.theme_cls.primary_color
+					separator_color: "blue"
+					radius: (16, 16, 16, 16)
+					on_active: app.switch_classifier(*args)
+					
+					MDSegmentedControlItem:
+						text: "Character"
+						bold: True
+					
+					MDSegmentedControlItem:
+						text: "Movie"
+						bold: True
 		        
 		        MDGridLayout:
 		        	cols: 2
@@ -121,6 +137,7 @@ MDBottomNavigation:
 								halign: "center"
 		        
 		        MDRoundFlatButton:
+		            id: prediction_button
 		            text: "Predict"
 		            pos_hint: {"center_x" : 0.5}
 		            on_release: app.capture_and_predict()
