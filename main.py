@@ -35,6 +35,7 @@ data = [
 	["assets/images/Ralph-Breaks-The-Internet.jpg", "https://youtube.com/embed/_BcYBFC6zfY"], 
 	["assets/images/Toy-Story-3.jpg", "https://youtube.com/embed/JcpWXaA2qeg"], 
 	["assets/images/Inside-Out.jpg", "https://youtube.com/embed/1HFv47QHWJU"], 
+	["assets/images/Brave.jpg", "https://youtube.com/embed/TEHWDA_6e3M"], 
 	["assets/images/Incredibles.jpg", "https://youtube.com/embed/-UaGUdNJdRQ"], 
 	["assets/images/Zootopia.jpg", "https://youtube.com/embed/jWM0ct-OLsM"], 
 	["assets/images/Finding-Dory.jpg", "https://youtube.com/embed/JhvrQeY3doI"], 
